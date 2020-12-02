@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +27,11 @@ public class User {
 	private String password;
 	
 	private String title;
-	private String role;
+	
+	@Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Role role;
+	
 	@Column(name="created_time")
 	private Date createdTime;
 	
@@ -41,7 +47,7 @@ public class User {
 		this.createdTime = new Date();
 	}
 
-	public User(String name, String password, String title, String role) {
+	public User(String name, String password, String title, Role role) {
 		this.userName = name;
 		this.password = password;
 		this.title = title;
@@ -76,10 +82,10 @@ public class User {
 		this.title = title;
 		this.updateTime = new Date();
 	}
-	public String getRole() {
+	public Role getRole() {
 		return role;
 	}
-	public void setRole(String role) {
+	public void setRole(Role role) {
 		this.role = role;
 		this.updateTime = new Date();
 	}
