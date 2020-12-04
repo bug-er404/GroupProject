@@ -47,4 +47,8 @@ public class Resource {
 		this.name = name;
 		this.createdTime = new Date();
 	}
+
+	// Please complete this:
+	public void setResourceName(String name) {
+	}
 }

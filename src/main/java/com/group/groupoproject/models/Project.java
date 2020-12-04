@@ -56,6 +56,12 @@ public class Project {
 		this.id = id;
 	}
 
+	// We need project name
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+
+
 	public User getOwner() {
 		return owner;
 	}
@@ -70,5 +76,10 @@ public class Project {
 
 	public void setCreatedTime(Date createdTime) {
 		this.createdTime = createdTime;
+	}
+
+	// Need to complete this model
+	public List getProjectResource() {
+		return null;
 	}
 }
